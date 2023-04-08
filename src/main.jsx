@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import App from './App'
 import About from './components/About'
+import Books from './components/Books/Books'
 import Home from './components/Home/Home'
 import './index.css'
-import Books from './components/Books/Books'
 
 const router = createBrowserRouter ([
 {
@@ -14,16 +14,18 @@ const router = createBrowserRouter ([
     children: [
         {
             path: '/',
+            element: <About></About>
+        },
+        {
+            path: '/home',
             element: <Home></Home>
         },
         {
             path: 'books',
-            element: <Books></Books>
+            element: <Books></Books>,
+            loader: () => fetch('https://api.itbook.store/1.0/new')
         },
-        {
-            path: '/about',
-            element: <About></About>
-        },
+        
     ]  
 }
 

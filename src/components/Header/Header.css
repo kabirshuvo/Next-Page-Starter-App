@@ -1,0 +1,15 @@
+.my-image {
+  transition: transform 0.2s ease-in-out;
+}
+
+.my-image:hover {
+  transform: scale(1.2);
+}
+
+.my-text {
+  transition: transform 0.2s ease-in-out;
+}
+
+.my-text:hover {
+  transform: scale(1.04);
+}
